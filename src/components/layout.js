@@ -1,51 +1,34 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
+import React from "react"
+import styled from "styled-components"
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
+import GlobalStyle from "./globalStyle"
 import Header from "./header"
-import "./layout.css"
+import Footer from "./footer"
+
+const StyledLayout = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  #main-content {
+    width: 100%;
+    max-width: 62.5rem;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+`
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+    return (
+        <StyledLayout>
+            <GlobalStyle />
+            <Header />
+            <main id="main-content">{children}</main>
+            <Footer />
+        </StyledLayout>
+    )
 }
 
 export default Layout
