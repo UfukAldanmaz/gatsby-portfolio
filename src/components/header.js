@@ -43,7 +43,7 @@ const Header = () => {
                 <StyledLink to="#about">
                     About
                 </StyledLink>
-                <StyledLink to="#projects">
+                <StyledLink to="/projects">
                     Projects
                 </StyledLink>
             </StyledTabs>
