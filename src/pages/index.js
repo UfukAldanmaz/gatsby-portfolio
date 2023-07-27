@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <About content={data.about.edges[0].node} />
-      <Projects content={data.projects.edges[1].node} />
+      {/* <Projects content={data.projects.edges[1].node} /> */}
     </Layout>
   )
 }
@@ -31,23 +31,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    projects: 
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-              description
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-              title
-              stack
-            }}
-          
-        }
-      }
     
 }
 
