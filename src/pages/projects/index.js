@@ -1,24 +1,35 @@
 import React from 'react'
 import Layout from '../../components/layout'
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { styled } from 'styled-components';
+
+const StyledSection = styled.section`
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+`
 
 function Projects({ data }) {
 
     console.log("data", data);
-
     const projects = data.allMarkdownRemark.nodes
+
     return (
         <Layout>
-            <div>
-
-                {projects.map(project => (
-                    <div>
-                        <h3>{project.frontmatter.title}</h3>
-                        <h5>{project.frontmatter.stack}</h5>
-                        <p>{project.frontmatter.description}</p>
-                    </div>
-                ))}
-            </div>
+            <StyledSection>
+                <div className="container">
+                    {projects.map(project => (
+                        <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
+                            <div >
+                                <h3>{project.frontmatter.title}</h3>
+                                <h5>{project.frontmatter.stack}</h5>
+                                <GatsbyImage image={getImage(project.frontmatter.thumb)} />
+                            </div></Link>
+                    ))}</div>
+            </StyledSection>
 
         </Layout>
     )
@@ -30,11 +41,16 @@ query ProjectsPage {
     allMarkdownRemark {
         nodes {
           frontmatter {
-            description
-            featuredImage
+            slug
             stack
             title
+            thumb {
+                childImageSharp {
+                    gatsbyImageData(layout: CONSTRAINED)
+                }
+              }
           }
+          id
         }
       }
   }
