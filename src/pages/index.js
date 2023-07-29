@@ -5,9 +5,10 @@ import { graphql } from 'gatsby'
 import Projects from "../components/projects"
 
 const IndexPage = ({ data }) => {
+
   return (
     <Layout>
-      <About content={data.about.edges[0].node} />
+      <About content={data.about} />
       {/* <Projects content={data.projects.edges[1].node} /> */}
     </Layout>
   )
@@ -16,21 +17,16 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const pageQuery = graphql`
-  {
-    about: allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-            greetings
-            emoji
-            subtitlePrefix
-            subtitleHighlight
-          }
-          rawMarkdownBody
-        }
-      }
+ {
+  about:  markdownRemark(fileAbsolutePath: {regex: "/src/content/about/about.md/"}) {
+    frontmatter {
+      emoji
+      greetings
+      subtitleHighlight
+      subtitlePrefix
+      introduce
     }
+  }
     
 }
 
