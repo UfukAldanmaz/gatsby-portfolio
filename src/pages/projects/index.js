@@ -38,7 +38,7 @@ function Projects({ data }) {
 export const query = graphql`
 query ProjectsPage {
 
-    allMarkdownRemark {
+   allMarkdownRemark {
         nodes {
           frontmatter {
             slug
@@ -57,3 +57,5 @@ query ProjectsPage {
 `
 
 export default Projects
+
+// query ProjectsPage
