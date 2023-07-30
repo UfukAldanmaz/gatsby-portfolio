@@ -23,19 +23,9 @@ const About = ({ data }) => {
     return (
         <Layout>
             <StyledSection id="about">
-                <h1 className="title">
-                    {about.frontmatter.greetings}{" "}
-                    <span role="img" aria-label="emoji">
-                        {about.frontmatter.emoji}
-                    </span>
-                    <br />
-                    {about.frontmatter.introduce}
-                </h1>
-                <h2 className="subtitle">
-                    {about.frontmatter.subtitlePrefix}{" "}
-                    <span className="highlighted">{about.frontmatter.subtitleHighlight}</span>
-                </h2>
-                {/* <div className="description">{rawMarkdownBody}</div> */}
+
+
+                <div className="description">{about.rawMarkdownBody}</div>
             </StyledSection>
         </Layout>
     )
@@ -44,13 +34,7 @@ const About = ({ data }) => {
 export const query = graphql`
 query AboutPage {
     markdownRemark(fileAbsolutePath: {regex: "/src/content/about/about.md/"}) {
-        frontmatter {
-          emoji
-          greetings
-          subtitleHighlight
-          subtitlePrefix
-          introduce
-        }
+        rawMarkdownBody
       }
   }
 `
