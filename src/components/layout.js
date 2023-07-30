@@ -13,6 +13,7 @@ const StyledLayout = styled.div`
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
   #main-content {
+
     width: 100%;
     max-width: 62.5rem;
     margin: 0 auto;
@@ -21,14 +22,14 @@ const StyledLayout = styled.div`
 `
 
 const Layout = ({ children }) => {
-    return (
-        <StyledLayout>
-            <GlobalStyle />
-            <Header />
-            <main id="main-content">{children}</main>
-            <Footer />
-        </StyledLayout>
-    )
+  return (
+    <StyledLayout>
+      <GlobalStyle />
+      <Header />
+      <main id="main-content">{children}</main>
+      <Footer />
+    </StyledLayout>
+  )
 }
 
 export default Layout
