@@ -1,9 +1,2 @@
----
-greetings: Hello
-emoji: 👋
-introduce: I'm Ufuk Aldanmaz
-subtitlePrefix: I build and design 
-subtitleHighlight: things for the web. Frontend Web Developer. Based in Istanbul.
----
 
-
+I'm committed myself to pursuing a long-term career change in software development. My main target is being a front-end developer. I make projects with JavaScript and React JS. I'm also improving myself on Vue.js, Next.js, Gatsby.js and React Native.
