@@ -3,10 +3,12 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
+
     }
     html {
         width: 100%;
         height: 100%;
+
     }
     body {
         width: 100%;
@@ -19,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Roboto", Arial, Helvetica, sans-serif;
         line-height: 1.5rem;
         font-weight: 400;
+
     }
     h1 {
         font-weight: 700;
