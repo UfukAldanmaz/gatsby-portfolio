@@ -65,10 +65,10 @@ const Footer = () => {
     <StyledFooter>
       {/* <h3>Under reconstruction</h3> */}
       <div className="socials">
-        <a href={`https://github.com/${github}`}>
+        <a href={`https://github.com/${github}`} target="_blank">
           <GatsbyImage image={getImage(githubIcon)} width={100} alt="github-icon" />
         </a>
-        <a href={`https://www.linkedin.com/in/${linkedIn}`}>
+        <a href={`https://www.linkedin.com/in/${linkedIn}`} target="_blank">
           <GatsbyImage image={getImage(linkedInIcon)} width={100} alt="linkedin-icon" />
         </a>
       </div>
