@@ -5,20 +5,22 @@ import { graphql } from 'gatsby'
 
 function ProjectDetails({ data }) {
 
-    const { html } = data.markdownRemark
+  const { html } = data.markdownRemark
 
-    const { stack, title, featuredImg } = data.markdownRemark.frontmatter
+  const { stack, title, featuredImg, link } = data.markdownRemark.frontmatter
 
-    return (
-        <Layout>
-            <div>
-                <h2>{title}</h2>
-                <h3>{stack}</h3>
-                <GatsbyImage image={getImage(featuredImg)} />
-                <div dangerouslySetInnerHTML={{ __html: html }}></div>
-            </div>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <div>
+        <h2>{title}</h2>
+        <h3>{stack}</h3>
+        <GatsbyImage image={getImage(featuredImg)} />
+        <div dangerouslySetInnerHTML={{ __html: html }}></div>
+        <div>Visit site on <a href={link} target='_blank'><strong>GitHub</strong></a></div>
+        <br />
+      </div>
+    </Layout>
+  )
 }
 
 export const query = graphql`
@@ -29,6 +31,7 @@ query ProjectDetails($slug: String) {
       frontmatter {
         stack
         title
+        link
         featuredImg {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
