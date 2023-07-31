@@ -18,13 +18,9 @@ const StyledSection = styled.section`
 const About = ({ data }) => {
     const about = data.markdownRemark
 
-    console.log("ABOUT", about);
-
     return (
         <Layout>
             <StyledSection id="about">
-
-
                 <div className="description">{about.rawMarkdownBody}</div>
             </StyledSection>
         </Layout>
