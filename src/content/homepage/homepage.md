@@ -3,7 +3,8 @@ greetings: Hello
 emoji: 👋
 introduce: I'm Ufuk Aldanmaz
 subtitlePrefix: I build and design 
-subtitleHighlight: things for the web. 
+subtitleHighlight: things for the web.
+resumeLink: /assets/Ufuk-Aldanmaz-Resume.pdf
 ---
 
-Frontend Web Developer. Based in Istanbul.
+Frontend Developer. Based in Istanbul.

@@ -16,7 +16,7 @@ function ProjectDetails({ data }) {
         <h3>{stack}</h3>
         <GatsbyImage image={getImage(featuredImg)} />
         <div dangerouslySetInnerHTML={{ __html: html }}></div>
-        <div>Visit site on <a href={link} target='_blank'><strong>GitHub</strong></a></div>
+        {link && <div>Visit site on <a href={link} target='_blank'><strong>GitHub</strong></a></div>}
         <br />
       </div>
     </Layout>

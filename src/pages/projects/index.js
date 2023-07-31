@@ -10,6 +10,12 @@ const StyledSection = styled.section`
     flex-direction: row;
     gap: 50px;
 }
+h3{
+    height: 50px;
+    margin-bottom: 50px
+}
+
+
 `
 
 function Projects({ data }) {
@@ -25,8 +31,8 @@ function Projects({ data }) {
                         <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
                             <div >
                                 <h3>{project.frontmatter.title}</h3>
-                                <h5>{project.frontmatter.stack}</h5>
                                 <GatsbyImage image={getImage(project.frontmatter.thumb)} />
+                                <h5>{project.frontmatter.stack}</h5>
                             </div></Link>
                     ))}</div>
             </StyledSection>
@@ -38,7 +44,7 @@ function Projects({ data }) {
 export const query = graphql`
 query ProjectsPage {
 
-   allMarkdownRemark {
+   allMarkdownRemark (sort: {frontmatter: {viewOrder: ASC}}) { 
         nodes {
           frontmatter {
             slug

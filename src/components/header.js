@@ -31,6 +31,12 @@ padding: 8px;
     border-bottom: 5px solid #cdf3e1;
 }
 `
+const StyledResumeLink = styled(props => <a {...props} target="_blank">Resume</a>)`
+padding: 8px;
+&:hover{
+    border-bottom: 5px solid #cdf3e1;
+}
+`
 
 const Header = () => {
     return (
@@ -46,6 +52,9 @@ const Header = () => {
                 <StyledLink to="/projects">
                     Projects
                 </StyledLink>
+                <StyledResumeLink href="/assets/Ufuk-Aldanmaz-Resume.pdf">
+
+                </StyledResumeLink>
             </StyledTabs>
         </StyledHeader>
     )
